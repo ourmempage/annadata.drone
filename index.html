@@ -11,7 +11,6 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      background-image :url("https://res.cloudinary.com/daih6rnto/image/upload/v1702643518/1702643298771_whq8vh.jpg");
     }
 
     button {
@@ -28,6 +27,13 @@
     button:hover {
       background-color: #27ae60; /* Change color on hover */
       transform: scale(1.05); /* Add a scale animation on hover */
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        background: url("https://res.cloudinary.com/daih6rnto/image/upload/v1702643518/1702643298771_whq8vh.jpg") center center;
+        background-size: cover;
+      }
     }
   </style>
 </head>
