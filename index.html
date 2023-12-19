@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Brochure</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #3498db; /* Set your desired background color */
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #2ecc71; /* Set your desired button color */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #27ae60; /* Change color on hover */
+      transform: scale(1.05); /* Add a scale animation on hover */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Button to trigger the download -->
+<button id="downloadButton">Download Brochure</button>
+
+<script>
+  // Function to handle the button click event
+  function downloadBrochure() {
+    // Replace 'path/to/your/brochure.pdf' with the actual path to your brochure file
+    const brochurePath = 'brocher.pdf';
+
+    // Create an anchor element
+    const downloadLink = document.createElement('a');
+
+    // Set the download link attributes
+    downloadLink.href = brochurePath;
+    downloadLink.download = 'brochure.pdf';
+
+    // Append the anchor element to the document
+    document.body.appendChild(downloadLink);
+
+    // Trigger a click event on the anchor element
+    downloadLink.click();
+
+    // Remove the anchor element from the document
+    document.body.removeChild(downloadLink);
+  }
+
+  // Attach the downloadBrochure function to the button click event
+  document.getElementById('downloadButton').addEventListener('click', downloadBrochure);
+</script>
+
+</body>
+</html>
